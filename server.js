@@ -25,12 +25,15 @@ app.get('/', (req, res) => {
 
 
 app.post('/misba7', (req, res) => {
+  wss.clients.forEach((client) => {
+    client.send(req.body.text);
+  });
   res.send('Got that!');
 });
 
 
-setInterval(() => {
-  wss.clients.forEach((client) => {
-    client.send("Hello from server");
-  });
-}, 10);
+// setInterval(() => {
+//   wss.clients.forEach((client) => {
+//     client.send("Hello from server");
+//   });
+// }, 10);
