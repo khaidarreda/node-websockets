@@ -2,6 +2,8 @@
 
 const express = require('express');
 const { Server } = require('ws');
+var bodyParser = require('body-parser');
+
 
 const PORT = process.env.PORT || 3000;
 const INDEX = '/index.html';
@@ -9,7 +11,8 @@ const INDEX = '/index.html';
 const app = express();
 const server = app.listen(PORT, () => console.log(`Listening on ${PORT}`));
 
-
+app.use(bodyParser.json()); // support json encoded bodies
+app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
 
 
 const wss = new Server({ server });
