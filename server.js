@@ -19,7 +19,7 @@ wss.on('connection', (ws) => {
   ws.on('close', () => console.log('Client disconnected'));
 });
 
-app.post('/', (req, res) => {
+app.get('/', (req, res) => {
   res.sendFile(INDEX, { root: __dirname })
 });
 
