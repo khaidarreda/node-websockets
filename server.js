@@ -17,11 +17,7 @@ wss.on('connection', (ws) => {
   ws.on('close', () => console.log('Client disconnected'));
 });
 
-server.post('/misba7', (req, res) => {
-  let text = req.body.text;
-  // implement your bot here ...
-  res.send(text);
-});
+
 
 setInterval(() => {
   wss.clients.forEach((client) => {
