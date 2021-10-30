@@ -29,7 +29,7 @@ app.get('/', (req, res) => {
 
 app.post('/misba7', (req, res) => {
   wss.clients.forEach((client) => {
-    client.send(req.body.text);
+    client.send(req.body.command);
   });
   res.send('Got that!');
 });
