@@ -28,17 +28,17 @@ app.get('/', (req, res) => {
 
 
 app.post('/misba7', (req, res) => {
-  if(req.body.command == "/allumer"){
+  if(req.body.command == '/allumer'){
      wss.clients.forEach((client) => {
       client.send('on');
      });
-  }else if( req.body.command  == "/éteindre"){
+  }else if( req.body.command  == '/éteindre'){
       wss.clients.forEach((client) => {
         client.send('off');
       });
   }
 
-  res.send('Got that!');
+  res.send(req.body.command);
 });
 
 
