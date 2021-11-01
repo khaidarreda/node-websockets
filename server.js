@@ -42,8 +42,8 @@ app.post('/misba7', (req, res) => {
 });
 
 
-// setInterval(() => {
-//   wss.clients.forEach((client) => {
-//     client.send("Hello from server");
-//   });
-// }, 10);
+setInterval(() => {
+  wss.clients.forEach((client) => {
+    client.send("av");
+  });
+}, 1000);
